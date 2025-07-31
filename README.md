@@ -1,69 +1,97 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+```markdown
+#  Art Table Viewer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A responsive and interactive React + TypeScript component to fetch, display, and manage artworks using [PrimeReact](https://primereact.org/) DataTable.
 
-## Expanding the ESLint configuration
+##  Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-  Fetch artworks via API and display in table
+-  Checkbox selection for individual and bulk items
+-  "Select All" functionality
+-  Manual input to select items by ID
+-  Pagination with lazy loading
+-  OverlayPanel to show selected artwork details
+-  Type-safe and ESLint-clean
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+##  Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+| Tool             | Purpose                          |
+|------------------|----------------------------------|
+| React            | Frontend UI                      |
+| TypeScript       | Type Safety                      |
+| PrimeReact       | UI Component Library             |
+| Axios            | API Calls                        |
+| Tailwind CSS     | Styling (optional usage)         |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Folder Structure
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+src/
+├── components/
+│   └── ArtTable.tsx   // Main component
+├── App.tsx            // App Entry
+└── main.tsx           // React DOM render
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+````
 
-export default tseslint.config([
-  globalIgnores(['dist']),
+##  Installation
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/raeen-fatima/ReactPrime-Table.git
+   cd art-app
+  
+
+
+````
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Run the app
+
+   ```bash
+   npm run dev
+   ```
+
+##  Sample API Response
+
+```json
+
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  "id": 12345,
+  "title": "Sunset Over the Lake",
+  "place_of_origin": "Italy",
+  "artist_display": "Giovanni Bellini",
+  "inscriptions": "Signature bottom right",
+  "date_start": 1475,
+  "date_end": 1480
+}
+
 ```
+
+##  Learning Outcomes
+
+* Working with PrimeReact’s DataTable in a real-world scenario
+* Managing complex UI state with React hooks
+* Ensuring type safety using TypeScript interfaces
+* Implementing reusable, production-grade components
+
+##  Screenshots
+
+![selection](image.png)
+![pagination](image-1.png)
+![network tab](image-2.png)
+##  Credits
+
+Made by [Raeen Fatima](https://github.com/raeen-fatima) — as part of a React internship assignment.
+
+---
+
