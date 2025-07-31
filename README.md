@@ -26,10 +26,11 @@ A responsive and interactive React + TypeScript component to fetch, display, and
 | Axios            | API Calls                        |
 | Tailwind CSS     | Styling (optional usage)         |
 
+
+
 ## 📁 Folder Structure
 
 ```
-
 src/
 ├── components/
 │   └── ArtTable.tsx   // Main component
